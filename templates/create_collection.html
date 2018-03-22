@@ -7,11 +7,17 @@
 
 {% block main_content %}
 
-<form action="" method="POST">
+<form action = "" method="POST">
 	{{ form.hidden_tag() }}
 	{{ form.name.label }} {{ form.name() }}
 	{{ form.gif_picks.label }} {{ form.gif_picks() }}
 	{{ form.submit.label }}{{ form.submit() }}
 </form>
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
 
 {% endblock %}
